@@ -13,6 +13,8 @@ import plotly.express as px
 import pandas as pd
 
 from utils import agrupar_departamentos, ciudad_indice, muertes_mes_anio, frecuencia_muertes
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 path = os.path.dirname(__file__)
 
@@ -204,3 +206,5 @@ app.layout = html.Div([
     ], style={'padding': '0px', 'width': '100%'})
 ], style={'backgroundColor': 'white', 'width': '100%', 'minHeight': '100vh'})
 
+if __name__ == '__main__':
+    app.run_server(debug=True, host='0.0.0.0', port=8050)
